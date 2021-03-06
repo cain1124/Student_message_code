@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<title>学生信息管理系统</title>
+		<!-- Bootstrap -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+		<link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+		<link href="{% static 'css/style2.css' %}" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div id="header">
+			<div class="main marg clearfix">
+				<div class="logo fl">
+					<a href="/" title="西安建筑科技大学">
+						<img src="{% static 'img/logo.png' %}" width="400" height="82" border="0" alt="西安建筑科技大学" title="西安建筑科技大学"></a>
+				</div>
+				<h3 class="name">学生信息管理系统</h3>
+			</div>
+
+			<!--导航-->
+			<div id="nav">
+				<div class="main">
+					<div>
+						<div class="navBar">
+							<!--#begineditable clone="0" namechanged="0" order="3" ispublic="0" tagname="头部导航-网站导航" viewid="243367" contentviewid="" contype="" stylesysid="" layout="" action="" name="头部导航-网站导航"-->
+							<ul class="nav clearfix">
+								<li class="m">
+									<h3>
+                <a href="/" title="首页">首页</a>
+            </h3>
+								</li>
+								<li class="m">
+									<h3>
+                <a href="/" disabled="true" onclick="return false;" title="学院概况">学院概况</a>
+            </h3>
+
+								</li>
+								<li class="m">
+									<h3>
+                <a href="/" disabled="true" onclick="return false;" title="关于我们">关于我们</a>
+            </h3>
+
+								</li>
+
+								<li class="block" style="left: 106px;"></li>
+							</ul>
+							<!--#endeditable-->
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<!--轮播图-->
+		<div id="banner" class="container">
+			<div class="carousel slide" id="slidershow" data-ride="carousel" data-interval="2000">
+				<!--计数器-->
+				<ol class="carousel-indicators">
+					<li class="active" data-target="#slidershow" data-slide-to="0"></li>
+					<li data-target="#slidershow" data-slide-to="1"></li>
+					<li data-target="#slidershow" data-slide-to="2"></li>
+				</ol>
+				<!--图片容器-->
+				<div class="carousel-inner">
+					<div class="item active">
+						<img src="{% static 'image/banner.jpg' %}" />
+						<!--添加对应标题和内容-->
+						<div class="carousel-caption">
+							<h4></h4>
+							<span></span>
+						</div>
+					</div>
+					
+					<div class="item">
+						<img src="{% static 'image/school3.jpg' %}" />
+						<!--添加对应标题和内容-->
+						<div class="carousel-caption">
+							<h4></h4>
+						</div>
+					</div>
+					<div class="item">
+						<img src="{% static 'image/banner.jpg' %}" />
+						<!--添加对应标题和内容-->
+						<div class="carousel-caption">
+							<h4></h4>
+						</div>
+					</div>
+					<!--轮播导航-->
+					<a href="#slidershow" disabled="true" onclick="return false;" data-slide="prev" class="left carousel-control" role="button">
+						<i class="fa fa-chevron-left"></i>
+					</a>
+					<a href="#slidershow" disabled="true" onclick="return false;" data-slide="next" class="right carousel-control" role="button">
+						<i class="fa fa-chevron-right"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<!--content-->
+		<div class="container">
+
+			<div class="row row-offcanvas row-offcanvas-right">
+
+				<div class="col-xs-12 col-sm-9">
+					<div class="row">
+						<div class="col-xs-8 col-lg-6">
+							<img class="book" src="{% static 'image/school.jpg' %}" />
+							<p class="xiaoxun">自强、笃实、求源、创新</p>
+						</div>
+						<div class="borders col-xs-8 col-lg-6">
+							<div class="title">
+								<h2 class="clearfix">
+									<i class="fa fa-bars" style="color:#0E529C;"></i>
+									<a href="/" disabled="true" onclick="return false;">学院动态</a>
+								</h2>
+							</div>
+							<div class="abstract">
+								<h3><a href="#" disabled="true" onclick="return false;" title="关于召开共青团西安建筑科技大学信息与控制工程学院第十一次团员代表大会、第十四次学生代表大会和第二次研究生代表大会的通知">关于召开共青团西安建筑科技大学信...</a><span class="i new"></span></h3>
+								<p class="text">
+									<a href="#" disabled="true" onclick="return false;" title="关于召开共青团西安建筑科技大学信息与控制工程学院第十一次团员代表大会、第十四次学生代表大会和第二次研究生代表大会的通知">经研究，并报学院党委、校团委批准，定于2020年11月14、15日召开共青团西安建筑科技大学...</a>
+									<a class="red" disabled="true" onclick="return false;" href="#" title="关于召开共青团西安建筑科技大学信息与控制工程学院第十一次团员代表大会、第十四次学生代表大会和第二次研究生代表大会的通知" style="font-size: 13px;">[更多]</a>
+								</p>
+							</div>
+							<ul class="lisy">
+
+								<li class="clearfix">
+									<div class="fl">
+										<i class="fa fa-angle-double-right"></i>
+										<a href="#" disabled="true" onclick="return false;" title="关于选举共青团西安建筑科技大学信息与控制工程学院第十一次团员代表大会团员代表、第十四次学生代表大会和第二次研究生代表大会学生代表的通知​">关于选举共青团西安建筑科技大学信...</a><span class="i new"></span>
+									</div>
+									<span class="time fr">[11-10]</span>
+								</li>
+
+								<li class="clearfix">
+									<div class="fl">
+										<i class="fa fa-angle-double-right"></i>
+										<a href="#" disabled="true" onclick="return false;" title="关于选举共青团西安建筑科技大学信息与控制工程学院第十一次团员代表大会团员代表、第十四次学生代表大会和第二次研究生代表大会学生代表的通知​">信息与控制工程学院召开第五轮学科...</a><span class="i new"></span>
+									</div>
+									<span class="time fr">[11-19]</span>
+								</li>
+
+							</ul>
+						</div>
+
+						<!--/.col-xs-6.col-lg-4-->
+						<div class="borders col-xs-8 col-lg-6">
+							<div class="title">
+								<h2 class="clearfix">
+									<i class="fa fa-university" style="color:#0E529C;"></i>
+									<a href="#" disabled="true" onclick="return false;">本科生教育</a>
+								</h2>
+							</div>
+							<div class="abstract">
+								<img src="{% static 'image/index_1.jpg' %}" style="width: 100%;" />
+							</div>
+							<ul class="lisy">
+
+								<li class="clearfix">
+									<div class="fl">
+										<i class="fa fa-angle-double-right"></i>
+										<a href="#" disabled="true" onclick="return false;" title="关于选举共青团西安建筑科技大学信息与控制工程学院第十一次团员代表大会团员代表、第十四次学生代表大会和第二次研究生代表大会学生代表的通知​">我校信控学院计算机科学与技术专业...</a><span class="i new"></span>
+									</div>
+									<span class="time fr">[11-10]</span>
+								</li>
+
+								<li class="clearfix">
+									<div class="fl">
+										<i class="fa fa-angle-double-right"></i>
+										<a href="#" disabled="true" onclick="return false;" title="关于选举共青团西安建筑科技大学信息与控制工程学院第十一次团员代表大会团员代表、第十四次学生代表大会和第二次研究生代表大会学生代表的通知​">信控学院第17届青年教师教学竞赛预...</a><span class="i new"></span>
+									</div>
+									<span class="time fr">[11-12]</span>
+								</li>
+								<li class="clearfix">
+									<div class="fl">
+										<i class="fa fa-angle-double-right"></i>
+										<a href="#" disabled="true" onclick="return false;" title="关于选举共青团西安建筑科技大学信息与控制工程学院第十一次团员代表大会团员代表、第十四次学生代表大会和第二次研究生代表大会学生代表的通知​">电子信息类（通信工程专业）本科人...</a><span class="i new"></span>
+									</div>
+									<span class="time fr">[11-16]</span>
+								</li>
+								<li class="clearfix">
+									<div class="fl">
+										<i class="fa fa-angle-double-right"></i>
+										<a href="#" disabled="true" onclick="return false;" title="关于选举共青团西安建筑科技大学信息与控制工程学院第十一次团员代表大会团员代表、第十四次学生代表大会和第二次研究生代表大会学生代表的通知​">关于选举共青团西安建筑科技大学信...</a><span class="i new"></span>
+									</div>
+									<span class="time fr">[11-10]</span>
+								</li>
+
+							
+							</ul>
+
+						</div>
+						<!--/.col-xs-6.col-lg-4-->
+						<div class="borders col-xs-8 col-lg-6">
+							<div class="title">
+								<h2 class="clearfix">
+									<i class="fa fa-graduation-cap" style="color:#0E529C;"></i>
+									<a href="#" disabled="true" onclick="return false;">研究生教育</a>
+								</h2>
+							</div>
+							<div class="abstract">
+								<img src="{% static 'image/index_1.jpg' %}" style="width: 100%;" />
+							</div>
+							<ul class="lisy">
+
+								<li class="clearfix">
+									<div class="fl">
+										<i class="fa fa-angle-double-right"></i>
+										<a href="#" disabled="true" onclick="return false;" title="关于选举共青团西安建筑科技大学信息与控制工程学院第十一次团员代表大会团员代表、第十四次学生代表大会和第二次研究生代表大会学生代表的通知​">天涯海角，云端相聚——信控学院...</a><span class="i new"></span>
+									</div>
+									<span class="time fr">[11-10]</span>
+								</li>
+
+								<li class="clearfix">
+									<div class="fl">
+										<i class="fa fa-angle-double-right"></i>
+										<a href="#" disabled="true" onclick="return false;" title="关于选举共青团西安建筑科技大学信息与控制工程学院第十一次团员代表大会团员代表、第十四次学生代表大会和第二次研究生代表大会学生代表的通知​">第十五届中国研究生电子设计竞赛...</a><span class="i new"></span>
+									</div>
+									<span class="time fr">[11-11]</span>
+								</li>
+								<li class="clearfix">
+									<div class="fl">
+										<i class="fa fa-angle-double-right"></i>
+										<a href="#" disabled="true" onclick="return false;" title="关于选举共青团西安建筑科技大学信息与控制工程学院第十一次团员代表大会团员代表、第十四次学生代表大会和第二次研究生代表大会学生代表的通知​">信控学院研究生党支部庆祝中华人...</a><span class="i new"></span>
+									</div>
+									<span class="time fr">[11-20]</span>
+								</li>
+								<li class="clearfix">
+									<div class="fl">
+										<i class="fa fa-angle-double-right"></i>
+										<a href="#" disabled="true" onclick="return false;" title="关于选举共青团西安建筑科技大学信息与控制工程学院第十一次团员代表大会团员代表、第十四次学生代表大会和第二次研究生代表大会学生代表的通知​">信控学院与西安航天神舟建筑设计...</a><span class="i new"></span>
+									</div>
+									<span class="time fr">[11-22]</span>
+								</li>
+
+							
+							</ul>
+						</div>
+					</div>
+					<!--/row-->
+				</div>
+				<!--/.col-xs-12.col-sm-9-->
+
+				<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+					<div class="list-group">
+						<a href="#" class="list-group-item active" disabled="true" onclick="return false;"><i class="fa fa-address-book-o">&nbsp;&nbsp;</i>用户登录入口</a>
+						<a href="{% url 'users:user_login' %}" class="list-group-item"><i class="fa fa-user">&nbsp;&nbsp; </i>学生入口</a>
+						<a href="/xadmin" target="_blank" class="list-group-item"><i class="fa fa-user-circle-o">&nbsp;&nbsp;</i>管理员入口</a>
+					</div>
+				</div>
+				<!--/.sidebar-offcanvas-->
+				<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+					<div class="list-group">
+						<a href="#" class="list-group-item active" disabled="true" onclick="return false;"><i class="fa fa-envelope">&nbsp;&nbsp;</i>专题专栏</a>
+						<a href="#" class="list-group-item" disabled="true" onclick="return false;">
+							<img src="{% static 'image/xk.jpg' %}" style="width: 230px;height: 90px;" />
+						</a>
+						<a href="#" class="list-group-item" disabled="true" onclick="return false;">
+							<img src="{% static 'image/z1.jpg' %}" style="width: 230px;height: 90px;" />
+						</a>
+						<a href="#" class="list-group-item" disabled="true" onclick="return false;">
+							<img src="{% static 'image/z2.jpg' %}" style="width: 230px;height: 90px;" />
+						</a>
+						<a href="#" class="list-group-item" disabled="true" onclick="return false;">
+							<img src="{% static 'image/z3.jpg' %}" style="width: 230px;height: 90px;" />
+						</a>
+					</div>
+				</div>
+			</div>
+			<!--/row-->
+
+			<hr>
+
+			
+
+		</div>
+
+		<!--footer-->
+		<div id="footer">
+			<div class="main-left">
+				<p>Copyright © 2020 西安建筑科技大学 版权所有</p>
+				<p>地址：陕西省西安市碑林区雁塔路中段13号</p>
+				<p><span style="color: #ffffff">电话：029-833757896 / 83787895</span></p>
+			</div>
+			<div class="main-right">
+				<div class="ewm">
+
+					<a href="#" title="官方微信公众号" disabled="true" onclick="return false;">
+
+						<img src="{% static 'image/wx.jpg' %}" width="104" height="103">
+						<br>
+						<p>官方微信公众号</p>
+					</a>
+
+				</div>
+				<div class="ewm">
+					<a href="#" title="官方微博二维码" disabled="true" onclick="return false;">
+						<img src="{% static 'image/wb.jpg' %}" width="104" height="103">
+						<br>
+						<p>官方微博二维码</p>
+					</a>
+
+				</div>
+
+			</div>
+
+		</div>
+		<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+		<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+		<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+	</body>
+
+</html>

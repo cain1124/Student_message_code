@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+		<title>学生信息管理系统</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'js/plugins/queryCity/css/cityLayout.css' %}">
+
+		<link rel="stylesheet" type="text/css" href="{% static 'css/lq.datetimepick.css' %}" />
+		
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+
+		<script src="{% static 'js/jquery.min.js' %}" type="text/javascript"></script>
+		<script src="{% static 'js/jquery-migrate-1.2.1.min.js' %}" type="text/javascript"></script>
+		<style>
+			table{
+				font-size: 18px;
+			}
+			table td{
+				text-align: center;
+				vertical-align: middle;
+			}
+		</style>
+
+	</head>
+
+	<body>
+<section class="headerwrap headerwrap2">
+    <header>
+        <div class="header2 header">
+            <div class="top">
+                <div class="wp">
+                    <img src="{% static 'image/logo2.png' %}" border="0" style="vertical-align: middle;">
+
+                    <!--登录后跳转-->
+            {% if request.user.is_authenticated %}
+                    <div class="personal">
+
+                        <dl class="user fr">
+                            <dd>欢迎您，{{ user.xm|default_if_none:"请先完善资料" }}<img class="down fr" src="{% static 'image/top_down.png' %}" /></dd>
+                            <dt><img width="60" height="60" src="{{ MEDIA_URL }}{{ user.image|default_if_none:"" }}"/></dt>
+                        </dl>
+                        <div class="userdetail">
+                            <dl>
+                                <dt><img width="80" height="80" src="{{ MEDIA_URL }}{{ user.image|default_if_none:"" }}"/></dt>
+                                <dd>
+                                    <h2>{{ user.xm|default_if_none:"" }}</h2>
+                                    <p>{{ user.username }}</p>
+                                </dd>
+                            </dl>
+                            <div class="btn">
+                                <a class="personcenter fl" href="{% url 'users:user_msg' %}">查看个人消息</a>
+                                <a class="fr" href="{% url 'users:user_logout' %}">退出</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    <a href="{% url 'users:user_msg' %}">
+                    <div class="msg-num"><span id="MsgNum">{{ request.user.get_msg_counter }}</span></div>
+                </a>
+
+
+                <div class="middle">
+                    <div class="wp">
+                        <h1>学生信息管理系统</h1>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </header>
+</section>
+		<!--crumbs start-->
+
+		<section>
+			<div class="wp">
+				<ul class="crumbs">
+					<li>
+						<a href="/">首页</a>></li>
+					<li>
+						<a href="{% url 'users:user_time' %}">上课时间</a>
+					</li>
+				</ul>
+			</div>
+		</section>
+
+		<section>
+			<div class="wp list personal_list">
+				<div class="left">
+					<ul id="ulist">
+						<li>
+							<a href="{% url 'users:user_info' %}" style="text-decoration: none;">个人资料</a>
+						</li>
+						<li>
+							<a href="{% url 'users:user_course' %}" style="text-decoration: none;">我的课程</a>
+						</li>
+						<li>
+							<a href="{% url 'users:user_grade' %}" style="text-decoration: none;">我的成绩</a>
+						</li>
+                        <li>
+							<a href="{% url 'users:user_choosecourse' %}">选课中心</a>
+						</li>
+						<li class="activelist">
+							<a href="{% url 'users:user_time' %}" style="text-decoration: none;">上课时间</a>
+						</li>
+						<li>
+							<a href="{% url 'users:user_msg' %}" style="position: relative;text-decoration: none;">
+								我的消息
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="right">
+					<div class="personal_des Releasecont">
+						<div class="head">
+							<h1>上课时间</h1>
+						</div>
+
+					</div>
+					<div class="personal_des permessage">
+						<div class="companycenter">
+							<div class="group_list brief">
+								<table class="table table-hover table-bordered">
+									<thead>
+										<tr>
+											<th>&nbsp;&nbsp;</th>
+											<th>节次</th>
+											<th>雁塔校区冬季(10.1-4.30)</th>
+											<th>雁塔校区夏季(5.1-9.30)</th>
+											<th>草堂校区</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr class="active">
+											<td rowspan="4">上午</td>
+											<td>第1节课</td>
+											<td>8:00-8:50</td>
+											<td>8:00-8:50</td>
+											<td>8:30-9:15</td>
+										</tr>
+										<tr class="success">
+											<td>第2节课</td>
+											<td>9:00-9:50</td>
+											<td>9:00-9:50</td>
+											<td>9:20-10:05</td>
+										</tr>
+										<tr class="warning">
+											<td>第3节课</td>
+											<td>10:10-11:00</td>
+											<td>10:10-11:00</td>
+											<td>10:25-11:10</td>
+										</tr>
+										<tr class="danger">
+											<td>第4节课</td>
+											<td>11:10-12:00</td>
+											<td>11:10-12:00</td>
+											<td>11:15-12:00</td>
+										</tr>
+										<tr>
+											<td rowspan="2">中午</td>
+											<td>第1节课</td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>第2节课</td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</tr>							
+										<tr class="active">
+											<td rowspan="4">下午</td>
+											<td>第1节课</td>
+											<td>14:00-14:50</td>
+											<td>14:30-15:20</td>
+											<td>14:00-14:45</td>
+										</tr>
+										<tr class="success">
+											<td>第2节课</td>
+											<td>15:00-15:50</td>
+											<td>15:30-16:20</td>
+											<td>14:50-15:35</td>
+										</tr>
+										<tr class="warning">
+											<td>第3节课</td>
+											<td>16:10-17:00</td>
+											<td>16:40-17:30</td>
+											<td>15:45-16:30</td>
+										</tr>
+										<tr class="danger">
+											<td>第4节课</td>
+											<td>17:10-18:00</td>
+											<td>17:40-18:30</td>
+											<td>16:35-17:20</td>
+										</tr>
+
+										<tr class="active">
+											<td rowspan="3">晚上</td>
+											<td>第1节课</td>
+											<td>19:30-20:20</td>
+											<td>20:00-20:50</td>
+											<td>19:30-20:15</td>
+										</tr>
+										<tr class="success">
+											<td>第2节课</td>
+											<td>20:30-21:20</td>
+											<td>21:00-21:50</td>
+											<td>20:20-21:05</td>
+										</tr>
+										<tr class="warning">
+											<td>第3节课</td>
+											<td>21:30-22:20</td>
+											<td>22:00-22:50</td>
+											<td></td>
+										</tr>
+									</tbody>
+								</table>
+
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+		</section>
+
+		<!--header start-->
+
+		<script src="{% static 'js/selectUi.js' %}" type='text/javascript'></script>
+		<script type="text/javascript" src="{% static 'js/plugins/laydate/laydate.js' %}"></script>
+		<script src="{% static 'js/plugins/layer/layer.js' %}"></script>
+		<script src="{% static 'js/plugins/queryCity/js/public.js' %}" type="text/javascript"></script>
+		<script src="{% static 'js/unslider.js' %}" type="text/javascript"></script>
+		<script src="{% static 'js/plugins/jquery.scrollLoading.js' %}" type="text/javascript"></script>
+		<script src="{% static 'js/validateDialog.js' %}" type="text/javascript"></script>
+		<script src="{% static 'js/deco-common.js' %}" type="text/javascript"></script>
+
+		<script src='{% static 'js/plugins/jquery.upload.js' %}' type='text/javascript'></script>
+		<script src="{% static 'js/validate.js' %}" type="text/javascript"></script>
+		<script src="{% static 'js/deco-user.js' %}"></script>
+
+	</body>
+
+</html>

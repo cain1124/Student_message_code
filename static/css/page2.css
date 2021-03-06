@@ -1,0 +1,22 @@
+.info_main{
+	width: 945px;
+	height: 500px;
+	border: 2px solid #f5f5f5;
+	border-radius: 5px;
+}
+.info_left{
+	width: 340px;
+	height: 500px;
+	float: left;
+	border-right: 2px solid #F5F5F5;
+
+}
+.info_right{
+	width: 600px;
+	height: 500px;
+	float: right;
+}
+#save_btn{
+	margin-top: 40px;
+	margin-left: 36%;
+}

@@ -1,0 +1,46 @@
+#login_main{
+	width: 900px;
+	height: auto;
+	margin: 0 auto;
+	margin-top: 10%;
+	margin-left: 400px;
+}
+#title{
+	width: 400px;
+	height: 40px;
+	margin: 0 auto;
+	margin-top: 60px;
+}
+h3{
+	font-size: 32px;
+	text-align: center;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    background: url(../image/loginbg.jpg) no-repeat;
+}
+body {
+    display: block;
+    margin: 8px;
+}
+.input-group{
+margin:10px 0px;//输入框上下外边距为10px,左右为0px
+}
+.login_left{
+	width: 460px;
+	height: 400px;
+}
+.login_right{
+	width: 420px;
+	height: 400px;
+
+}
+.ad {
+    background: url(../image/ad.png);
+    width: 245px;
+    height: 80px;
+    margin: 50px 0;
+}
+
